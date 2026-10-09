@@ -64,9 +64,9 @@ export default function App() {
     <main id="inhalt">
       <section className="hero container" id="start" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dash" /> IHR MALER & FAMILIENBETRIEB IN EBERBACH</div>
-          <h1 id="hero-title">Lebensräume<br />gestalten.<br /><span>Werte erhalten.</span></h1>
-          <p>Von der ersten Farbidee bis zum fertigen Raum.<br className="desktop-break" /> Wir bringen Farbe und Handwerk in Ihr Zuhause.</p>
+          <div className="eyebrow"><span className="eyebrow-dash" /> MR ROSENBAUM · FAMILIENBETRIEB</div>
+          <h1 id="hero-title">Malerarbeiten<br /><span>in Eberbach</span></h1>
+          <p>Anstriche, Fassaden, Tapeten und Bodenbeläge.<br className="desktop-break" /> Für Privat- und Gewerbekunden.</p>
           <div className="hero-actions"><a className="button" href="#kontakt">Ihr Projekt besprechen <Icon size={20} /></a><a className="text-link" href="#leistungen">Leistungen entdecken <span aria-hidden="true">↓</span></a></div>
           <div className="hero-note"><Icon name="pin" size={17} /> Eberbach am Neckar <span>Für Privat- und Gewerbekunden</span></div>
         </div>
@@ -74,22 +74,22 @@ export default function App() {
       </section>
 
       <section className="services-section container section" id="leistungen" aria-labelledby="services-title">
-        <div className="section-heading"><div><div className="eyebrow">UNSER HANDWERK</div><h2 id="services-title">Alles für Ihre Räume.</h2></div><p>Fünf Bereiche. Viele Möglichkeiten.</p></div>
+        <div className="section-heading"><div><div className="eyebrow">WAS WIR MACHEN</div><h2 id="services-title">Unsere Leistungen</h2></div><p>Innenräume, Fassaden und Böden.</p></div>
         <div className="services">{services.map(({ icon, title, text, color }) => <article className={`service accent-${color}`} key={title}><div className="service-icon"><Icon name={icon} size={29} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="family-section container section" id="ueber-uns" aria-labelledby="about-title">
-        <div className="family-intro"><div className="eyebrow">PERSÖNLICH. VON ANFANG AN.</div><h2 id="about-title">Handwerk mit Herz.<br /><span>Ein Familienbetrieb.</span></h2><ColorLine /></div>
+        <div className="family-intro"><div className="eyebrow">ÜBER UNS</div><h2 id="about-title">Unser <span>Familienbetrieb</span></h2><ColorLine /></div>
         <div className="family-copy"><p>Wir sind Maler Rosenbaum aus Eberbach. Als Familienbetrieb nehmen wir Ihr Zuhause persönlich – mit einem offenen Ohr für Ihre Wünsche und Freude an guter Arbeit.</p><ul className="family-values"><li><Icon name="check" size={18} /> Persönliche Beratung</li><li><Icon name="check" size={18} /> Saubere, zuverlässige Ausführung</li><li><Icon name="check" size={18} /> Hochwertige Materialien</li></ul><a className="text-link" href="#kontakt">Lernen wir uns kennen <Icon size={18} /></a></div>
       </section>
 
       <section className="container section projects-section" id="einblicke" aria-labelledby="projects-title">
-        <div className="section-heading"><div><div className="eyebrow">EINBLICKE IN UNSERE ARBEIT</div><h2 id="projects-title">Hier wird Neues entstehen.</h2></div><p>Platz für unsere nächsten Baustellenbilder.</p></div>
+        <div className="section-heading"><div><div className="eyebrow">BAUSTELLEN & PROJEKTE</div><h2 id="projects-title">Unsere Arbeiten</h2></div><p>Baustellenbilder folgen.</p></div>
         <div className="projects"><PhotoPlaceholder title="Räume & Oberflächen" className="accent-red" /><PhotoPlaceholder title="Fassaden & Außenbereiche" className="accent-yellow" /><PhotoPlaceholder title="Böden & Details" className="accent-blue" /></div>
       </section>
 
       <section className="contact container section" id="kontakt" aria-labelledby="contact-title">
-        <div className="contact-copy"><div className="eyebrow">IHR PROJEKT BEGINNT MIT EINEM GESPRÄCH</div><h2 id="contact-title">Was dürfen wir<br />für Sie gestalten?</h2><p>Erzählen Sie uns von Ihrer Idee.<br />Wir freuen uns darauf, Sie kennenzulernen.</p><a className="button" href="tel:+4915144341412"><Icon name="phone" size={19} />01514 4341412</a></div>
+        <div className="contact-copy"><div className="eyebrow">SO ERREICHEN SIE UNS</div><h2 id="contact-title">Kontakt</h2><p>Rufen Sie uns an, um Ihr Vorhaben zu besprechen.</p><a className="button" href="tel:+4915144341412"><Icon name="phone" size={19} />01514 4341412</a></div>
         <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>Itterstraße 5<br />69412 Eberbach</address><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maler+Rosenbaum+Itterstra%C3%9Fe+5+69412+Eberbach" target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing"><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>E-Mail-Adresse & Öffnungszeiten</p></div></div>
       </section>
     </main>
