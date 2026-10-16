@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import './App.css'
 
-const treeImage = `${import.meta.env.BASE_URL}rosenbaum-tree.png`
+const logoImage = `${import.meta.env.BASE_URL}rosenbaum-logo.png`
+const symbolImage = `${import.meta.env.BASE_URL}rosenbaum-symbol.png`
 
 function Icon({ name = 'arrow', size = 22 }) {
   const paths = {
@@ -25,7 +26,7 @@ function ColorLine({ className = '' }) {
 }
 
 function Brand() {
-  return <a className="brand" href="#start" aria-label="MR Rosenbaum – Startseite"><img src={treeImage} alt="" width="62" height="62" /><span className="brand-type"><span><b>MR</b> ROSENBAUM</span><small>RAUM · WAND · FASSADE · BODEN</small><ColorLine /></span></a>
+  return <a className="brand" href="#start" aria-label="Rosenbaum – Startseite"><img src={symbolImage} alt="" width="62" height="62" /><span className="brand-type"><span>ROSENBAUM</span><small>FARBE · QUALITÄT · WERTE</small><ColorLine /></span></a>
 }
 
 function PhotoPlaceholder({ title, description = 'Hier folgt ein echtes Baustellenfoto.', className = '' }) {
@@ -64,13 +65,13 @@ export default function App() {
     <main id="inhalt">
       <section className="hero container" id="start" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dash" /> MR ROSENBAUM · FAMILIENBETRIEB</div>
+          <div className="eyebrow"><span className="eyebrow-dash" /> ROSENBAUM · FAMILIENBETRIEB</div>
           <h1 id="hero-title">Malerarbeiten<br /><span>in Eberbach</span></h1>
           <p>Anstriche, Fassaden, Tapeten und Bodenbeläge.<br className="desktop-break" /> Für Privat- und Gewerbekunden.</p>
           <div className="hero-actions"><a className="button" href="#kontakt">Ihr Projekt besprechen <Icon size={20} /></a><a className="text-link" href="#leistungen">Leistungen entdecken <span aria-hidden="true">↓</span></a></div>
           <div className="hero-note"><Icon name="pin" size={17} /> Eberbach am Neckar <span>Für Privat- und Gewerbekunden</span></div>
         </div>
-        <figure className="hero-brand"><img src={treeImage} alt="Der Rosenbaum: silberner Baum mit Pinsel und Spachtel sowie roten, gelben und blauen Blättern" width="1322" height="1190" fetchPriority="high" /><figcaption><span className="hero-wordmark"><b>MR</b> ROSENBAUM</span><span>RAUM · WAND · FASSADE · BODEN</span><ColorLine /><span className="family-signature">Familienbetrieb <Icon name="heart" size={22} /></span></figcaption></figure>
+        <figure className="hero-brand"><img src={logoImage} alt="Rosenbaum – Farbe, Qualität, Werte – Eberbach. Logo mit einem R, einem grün belaubten Baum und einem Pinsel mit roten, gelben und blauen Farbspuren." width="960" height="640" fetchPriority="high" /><figcaption><span className="family-signature">Familienbetrieb <Icon name="heart" size={22} /></span></figcaption></figure>
       </section>
 
       <section className="services-section container section" id="leistungen" aria-labelledby="services-title">

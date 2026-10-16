@@ -1,6 +1,6 @@
 # Maler Rosenbaum
 
-Responsive Website für den Familienbetrieb Maler Rosenbaum in Eberbach. Weißer Hintergrund, Rot (#e3222a), Gelb (#f5c91b) und Blau (#0874c2) als gezielte Akzente.
+Responsive Website für den Familienbetrieb Maler Rosenbaum in Eberbach. Weißer Hintergrund, Blattgrün (#365823), dezente Goldakzente (#b28a49) und die roten, gelben und blauen Farben der neuen Bildmarke.
 
 ## Lokal starten
 
@@ -46,8 +46,8 @@ Die Vorlage enthält offensichtliche Muster-Kontaktdaten (Musterstraße 1, 06271
 - `src/App.jsx`: Inhalte, Leistungen, Navigation, Bildplatzhalter, Kontakt.
 - `src/App.css`: responsive Gestaltung.
 - `src/index.css`: globale Stile und Farbvariablen.
-- `public/rosenbaum-tree.png`: transparentes Baum-Motiv, mit dem integrierten Imagegen-Werkzeug anhand der Kundenvorlage nachgebildet. Keine pixelidentische Originaldatei.
+- `public/rosenbaum-logo.png` und `public/rosenbaum-symbol.png`: neue Bildmarke nach der Vorlage vom 15. Oktober, ohne die separaten Initialen MR. Mit dem integrierten Imagegen-Werkzeug nachgebildet.
 - `docs/brand-asset.md`: Herkunft und vollständiger Generierungsauftrag.
-- `public/favicon.svg`: einfaches Farbsymbol.
+- `public/favicon.png`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`: Bildmarke in passenden Icon-Größen.
 
 Das frühere Beispiel-Wohnraumbild ist nicht mehr in die Seite eingebunden. Keine extern geladenen Schriften, kein Tracking, kein Kontaktformular und keine eingebettete Karte. Google Maps öffnet sich nur beim Anklicken des Routenlinks.

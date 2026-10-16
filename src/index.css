@@ -1,18 +1,20 @@
 :root {
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-  color: #24262b;
+  color: #292923;
   background: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  --red: #e3222a;
-  --red-dark: #c41820;
-  --yellow: #f5c91b;
-  --blue: #0874c2;
-  --ink: #24262b;
-  --muted: #686b72;
-  --border: #e8e9ec;
+  --red: #db2027;
+  --yellow: #f2c21a;
+  --blue: #075fad;
+  --green: #365823;
+  --green-dark: #29451a;
+  --gold: #b28a49;
+  --ink: #292923;
+  --muted: #696b63;
+  --border: #e9e8e1;
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
@@ -22,8 +24,8 @@ h1, h2, h3, p, figure { margin: 0; }
 p { line-height: 1.75; }
 svg { flex-shrink: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 105px; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
-::selection { color: var(--ink); background: #ffed96; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+::selection { color: var(--ink); background: #e5eacb; }
 .skip { position: fixed; top: -100px; left: 15px; color: var(--ink); background: white; padding: 15px; z-index: 100; }
 .skip:focus { top: 10px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
