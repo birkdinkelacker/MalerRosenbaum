@@ -5,6 +5,6 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <App page={document.documentElement.dataset.page || 'home'} />
   </StrictMode>,
 )

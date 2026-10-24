@@ -1,5 +1,7 @@
-import { useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import './App.css'
+import { contact, emailHref } from './contact'
+import LegalPage from './LegalPage'
 
 const logoImage = `${import.meta.env.BASE_URL}rosenbaum-logo.png`
 const symbolImage = `${import.meta.env.BASE_URL}rosenbaum-symbol.png`
@@ -8,6 +10,7 @@ function Icon({ name = 'arrow', size = 22 }) {
   const paths = {
     arrow: 'M4 12h15m-6-6 6 6-6 6',
     phone: 'M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a15 15 0 0 1-7-7l2-2-2-5Z',
+    mail: 'M3 5h18v14H3zM3 5l9 7 9-7',
     roller: 'M3 3h14v7H3zM17 6h4v8H11v7M9 17h4v5H9z',
     room: 'm3 6 9-4 9 4v12l-9 4-9-4V6Zm9-4v12m-9 4 9-4 9 4',
     home: 'm3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7',
@@ -25,8 +28,8 @@ function ColorLine({ className = '' }) {
   return <span className={`color-line ${className}`} aria-hidden="true"><i /><i /><i /></span>
 }
 
-function Brand() {
-  return <a className="brand" href="#start" aria-label="Rosenbaum – Startseite"><img src={symbolImage} alt="" width="62" height="62" /><span className="brand-type"><span>ROSENBAUM</span><small>FARBE · QUALITÄT · WERTE</small><ColorLine /></span></a>
+function Brand({ homePrefix = '' }) {
+  return <a className="brand" href={`${homePrefix}#start`} aria-label="Rosenbaum – Startseite"><img src={symbolImage} alt="" width="62" height="62" /><span className="brand-type"><span>ROSENBAUM</span><small>FARBE · QUALITÄT · WERTE</small><ColorLine /></span></a>
 }
 
 function PhotoPlaceholder({ title, description = 'Hier folgt ein echtes Baustellenfoto.', className = '' }) {
@@ -41,28 +44,34 @@ const services = [
   { icon: 'wallpaper', title: 'Tapeten', text: 'Moderne Tapeten, individuelle Designs und professionelle Verarbeitung.', color: 'yellow' },
 ]
 
-export default function App() {
+export default function App({ page = 'home' }) {
   const [menu, setMenu] = useState(false)
-  const [legal, setLegal] = useState(null)
   const menuButton = useRef(null)
   const closeMenu = () => setMenu(false)
+  const homePrefix = page === 'home' ? '' : import.meta.env.BASE_URL
+
+  useLayoutEffect(() => {
+    // The anchor target only exists after React has rendered a newly opened page.
+    const target = document.getElementById(window.location.hash.slice(1))
+    target?.scrollIntoView({ behavior: 'instant' })
+  }, [page])
 
   return <>
     <a className="skip" href="#inhalt">Zum Inhalt springen</a>
     <header className="header">
       <div className="container header-inner">
-        <Brand />
+        <Brand homePrefix={homePrefix} />
         <button ref={menuButton} className="menu-toggle" aria-expanded={menu} aria-controls="navigation" onClick={() => setMenu(!menu)}>{menu ? 'Schließen ×' : 'Menü ☰'}</button>
         <nav id="navigation" className={menu ? 'open' : ''} aria-label="Hauptnavigation" onKeyDown={event => { if (event.key === 'Escape') { closeMenu(); menuButton.current?.focus() } }}>
-          <a href="#leistungen" onClick={closeMenu}>Leistungen</a>
-          <a href="#ueber-uns" onClick={closeMenu}>Familienbetrieb</a>
-          <a href="#einblicke" onClick={closeMenu}>Einblicke</a>
-          <a className="nav-contact" href="#kontakt" onClick={closeMenu}>Kontakt aufnehmen <Icon size={18} /></a>
+          <a href={`${homePrefix}#leistungen`} onClick={closeMenu}>Leistungen</a>
+          <a href={`${homePrefix}#ueber-uns`} onClick={closeMenu}>Familienbetrieb</a>
+          <a href={`${homePrefix}#einblicke`} onClick={closeMenu}>Einblicke</a>
+          <a className="nav-contact" href={`${homePrefix}#kontakt`} onClick={closeMenu}>Kontakt aufnehmen <Icon size={18} /></a>
         </nav>
       </div>
     </header>
 
-    <main id="inhalt">
+    {page !== 'home' ? <LegalPage page={page} /> : <main id="inhalt">
       <section className="hero container" id="start" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-dash" /> ROSENBAUM · FAMILIENBETRIEB</div>
@@ -90,13 +99,12 @@ export default function App() {
       </section>
 
       <section className="contact container section" id="kontakt" aria-labelledby="contact-title">
-        <div className="contact-copy"><div className="eyebrow">SO ERREICHEN SIE UNS</div><h2 id="contact-title">Kontakt</h2><p>Rufen Sie uns an, um Ihr Vorhaben zu besprechen.</p><a className="button" href="tel:+4915144341412"><Icon name="phone" size={19} />01514 4341412</a></div>
-        <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>Itterstraße 5<br />69412 Eberbach</address><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maler+Rosenbaum+Itterstra%C3%9Fe+5+69412+Eberbach" target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing"><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>E-Mail-Adresse & Öffnungszeiten</p></div></div>
+        <div className="contact-copy"><div className="eyebrow">SO ERREICHEN SIE UNS</div><h2 id="contact-title">Kontakt</h2><p>Rufen Sie uns an oder schreiben Sie uns, um Ihr Vorhaben zu besprechen.</p><div className="contact-actions"><a className="button" href={contact.phoneHref}><Icon name="phone" size={19} />{contact.phone}</a><a className="text-link contact-email" href={emailHref}><Icon name="mail" size={21} />{contact.email}</a></div></div>
+        <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>{contact.street}<br />{contact.city}</address><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maler+Rosenbaum+Itterstra%C3%9Fe+5+69412+Eberbach" target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing"><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>Öffnungszeiten</p></div></div>
       </section>
-    </main>
+    </main>}
 
-    <footer className="footer"><div className="container"><ColorLine className="footer-color-line" /><div className="footer-row"><Brand /><span>© {new Date().getFullYear()} Maler Rosenbaum</span><div className="legal-buttons"><button aria-expanded={legal === 'impressum'} aria-controls="legal" onClick={() => setLegal(legal === 'impressum' ? null : 'impressum')}>Impressum</button><button aria-expanded={legal === 'datenschutz'} aria-controls="legal" onClick={() => setLegal(legal === 'datenschutz' ? null : 'datenschutz')}>Datenschutz</button></div></div>
-      <div id="legal">{legal && <section className="legal-panel" aria-labelledby="legal-title"><h3 id="legal-title">{legal === 'impressum' ? 'Impressum' : 'Datenschutz'} · Platzhalter</h3>{legal === 'impressum' ? <><p>Maler Rosenbaum · Itterstraße 5 · 69412 Eberbach · Telefon: 01514 4341412</p><p>Inhaber laut Gestaltungsvorlage: Maximilian Rosenbaum – vor Veröffentlichung bestätigen. E-Mail-Adresse und gegebenenfalls weitere erforderliche Unternehmensangaben ergänzen. Dieser Bereich ist noch kein vollständiges Impressum.</p></> : <p>Hier muss vor Veröffentlichung eine zur tatsächlichen Website und zum Hosting passende Datenschutzerklärung ergänzt werden. Die Vorlage enthält kein Tracking, kein Kontaktformular und keine eingebettete Karte. Bilder und Schriften werden lokal bereitgestellt.</p>}</section>}</div>
+    <footer className="footer"><div className="container"><ColorLine className="footer-color-line" /><div className="footer-row"><Brand homePrefix={homePrefix} /><div className="footer-contact"><a href={emailHref}>{contact.email}</a><span>© {new Date().getFullYear()} Maler Rosenbaum</span></div><div className="legal-links"><a href={`${import.meta.env.BASE_URL}impressum.html`} aria-current={page === 'impressum' ? 'page' : undefined}>Impressum</a><a href={`${import.meta.env.BASE_URL}datenschutz.html`} aria-current={page === 'datenschutz' ? 'page' : undefined}>Datenschutz</a></div></div>
       <p className="draft-note">Website-Entwurf · Baustellenfotos und offene Angaben folgen.</p>
     </div></footer>
   </>
