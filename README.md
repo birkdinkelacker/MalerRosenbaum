@@ -18,7 +18,7 @@ npm run build
 npm run preview
 ```
 
-Auslieferbare Dateien entstehen in `dist/`. GitHub enthält den Quellcode; ein Upload allein aktiviert kein öffentliches Hosting. Für einen Unterpfad: `npm run build -- --base=/MalerRosenbaum/`.
+Auslieferbare Dateien entstehen in `dist/`. Die Produktionskonfiguration ist auf die Stammdomain `https://m-rosenbaum.de/` ausgerichtet. Der Build rendert die Seiten als vollständiges HTML vor und prüft die wichtigsten Suchmaschinenangaben automatisch. Mit `npm run check:seo` lässt sich ein bestehender Build erneut prüfen.
 
 Für Netlify legt `netlify.toml` den Build-Befehl `npm run build` und das Veröffentlichungsverzeichnis `dist` fest. Der Build erzeugt die Startseite sowie direkt aufrufbare Seiten unter `/impressum.html` und `/datenschutz.html`. Es ist kein SPA-Redirect erforderlich. Bei einem mit GitHub verbundenen Netlify-Projekt kann ein Push auf den konfigurierten Produktionsbranch automatisch veröffentlichen.
 
@@ -42,7 +42,11 @@ Die Vorlage enthält offensichtliche Muster-Kontaktdaten (Musterstraße 1, 06271
 - Öffnungszeiten eintragen.
 - Die sichtbar markierten Platzhalter in Impressum und Datenschutzerklärung vervollständigen bzw. nicht zutreffende Angaben entfernen. Eine Übersicht und die geprüften Quellen stehen in `docs/legal-content.md`.
 - Insbesondere rechtliche Inhaberangaben, Register-/Berufsangaben, Anbieter-Verträge, Hosting-Einstellungen und Löschfristen bestätigen. Die Rechtstexte sind Entwürfe und keine bestätigte rechtliche Freigabe.
-- Nach inhaltlicher Freigabe die `noindex, nofollow`-Metatags in den drei HTML-Einstiegsdateien prüfen und gegebenenfalls entfernen; sie sind kein Zugriffsschutz.
+- Die Startseite ist auf Nutzerwunsch seit 25. Oktober 2026 für Suchmaschinen freigegeben. Die unvollständigen Rechtstexte bleiben `noindex, follow`; das ist kein Zugriffsschutz.
+
+## Google Search Console
+
+Sitemap, robots.txt, kanonische URLs, strukturiertes Unternehmen und Logo sowie das Favicon sind vorbereitet. Die noch kontogebundene Bestätigung, das Einreichen der Sitemap und die Indexierungsanfrage sind in `docs/google-search-console.md` beschrieben. Ein echter Google-HTML-Bestätigungscode kann über die Netlify-Buildvariable `GOOGLE_SITE_VERIFICATION` eingebunden werden. Ohne Code wird kein Platzhalter-Tag veröffentlicht.
 
 ## Gestaltung und Bilddateien
 
@@ -52,6 +56,9 @@ Die Vorlage enthält offensichtliche Muster-Kontaktdaten (Musterstraße 1, 06271
 - `impressum.html`, `datenschutz.html`: direkt verlinkbare Einstiegsseiten mit eigenen Seitentiteln.
 - `src/App.css`: responsive Gestaltung.
 - `src/index.css`: globale Stile und Farbvariablen.
+- `scripts/prepare-search.mjs`: statische HTML-Ausgabe, strukturierte Daten und optionaler Google-Bestätigungstag.
+- `scripts/check-seo.mjs`: Build-Prüfung für Indexierbarkeit, Sitemap, kanonische URLs, Inhalt und Favicon.
+- `public/robots.txt`, `public/sitemap.xml`: Zugriffshinweise für Suchmaschinen und Sitemap.
 - `public/rosenbaum-logo.png` und `public/rosenbaum-symbol.png`: neue Bildmarke nach der Vorlage vom 15. Oktober, ohne die separaten Initialen MR. Mit dem integrierten Imagegen-Werkzeug nachgebildet.
 - `docs/brand-asset.md`: Herkunft und vollständiger Generierungsauftrag.
 - `public/favicon.png`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`: Bildmarke in passenden Icon-Größen.

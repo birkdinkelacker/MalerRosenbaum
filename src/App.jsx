@@ -33,7 +33,7 @@ function Brand({ homePrefix = '' }) {
 }
 
 function PhotoPlaceholder({ title, description = 'Hier folgt ein echtes Baustellenfoto.', className = '' }) {
-  return <div className={`photo-placeholder ${className}`}><span className="placeholder-label">FOTO-PLATZHALTER</span><Icon name="photo" size={36} /><strong>{title}</strong><p>{description}</p></div>
+  return <div className={`photo-placeholder ${className}`} data-nosnippet=""><span className="placeholder-label">FOTO-PLATZHALTER</span><Icon name="photo" size={36} /><strong>{title}</strong><p>{description}</p></div>
 }
 
 const services = [
@@ -100,12 +100,12 @@ export default function App({ page = 'home' }) {
 
       <section className="contact container section" id="kontakt" aria-labelledby="contact-title">
         <div className="contact-copy"><div className="eyebrow">SO ERREICHEN SIE UNS</div><h2 id="contact-title">Kontakt</h2><p>Rufen Sie uns an oder schreiben Sie uns, um Ihr Vorhaben zu besprechen.</p><div className="contact-actions"><a className="button" href={contact.phoneHref}><Icon name="phone" size={19} />{contact.phone}</a><a className="text-link contact-email" href={emailHref}><Icon name="mail" size={21} />{contact.email}</a></div></div>
-        <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>{contact.street}<br />{contact.city}</address><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maler+Rosenbaum+Itterstra%C3%9Fe+5+69412+Eberbach" target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing"><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>Öffnungszeiten</p></div></div>
+        <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>{contact.street}<br />{contact.city}</address><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maler+Rosenbaum+Itterstra%C3%9Fe+5+69412+Eberbach" target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing" data-nosnippet=""><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>Öffnungszeiten</p></div></div>
       </section>
     </main>}
 
     <footer className="footer"><div className="container"><ColorLine className="footer-color-line" /><div className="footer-row"><Brand homePrefix={homePrefix} /><div className="footer-contact"><a href={emailHref}>{contact.email}</a><span>© {new Date().getFullYear()} Maler Rosenbaum</span></div><div className="legal-links"><a href={`${import.meta.env.BASE_URL}impressum.html`} aria-current={page === 'impressum' ? 'page' : undefined}>Impressum</a><a href={`${import.meta.env.BASE_URL}datenschutz.html`} aria-current={page === 'datenschutz' ? 'page' : undefined}>Datenschutz</a></div></div>
-      <p className="draft-note">Website-Entwurf · Baustellenfotos und offene Angaben folgen.</p>
+      <p className="draft-note" data-nosnippet="">Website-Entwurf · Baustellenfotos und offene Angaben folgen.</p>
     </div></footer>
   </>
 }

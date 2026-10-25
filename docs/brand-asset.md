@@ -21,7 +21,7 @@ Weiß bleibt der Seitenhintergrund. Blattgrün (#365823) für Buttons und Hervor
 
 ## Favicon und Google
 
-Die Startseite verlinkt quadratische PNG-/ICO-Dateien direkt im HTML. Die Entwurfssperre `noindex, nofollow` bleibt bis zur inhaltlichen Freigabe bestehen. Ein Favicon kann erst nach öffentlicher Veröffentlichung und erneuter Verarbeitung einer indexierbaren Website in der Google-Suche erscheinen; die Anzeige ist nicht garantiert. [Google-Dokumentation](https://developers.google.com/search/docs/appearance/favicon-in-search).
+Die Startseite verlinkt quadratische PNG-/ICO-Dateien direkt im HTML. Seit 25. Oktober 2026 ist die Startseite auf Nutzerwunsch zur Indexierung freigegeben; die unvollständigen Rechtstexte bleiben ausgeschlossen. Nach erneuter Verarbeitung der Website kann das Favicon in der Google-Suche erscheinen; die Anzeige ist nicht garantiert. Die vollständige Bildmarke ist zusätzlich in den strukturierten Unternehmensdaten verknüpft. [Google-Dokumentation](https://developers.google.com/search/docs/appearance/favicon-in-search). Kontoschritte: `docs/google-search-console.md`.
 
 ## Imagegen-Prompts
 

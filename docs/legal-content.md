@@ -6,7 +6,7 @@ Stand der Bearbeitung und Quellenprüfung: 24. Oktober 2026.
 
 Die vom Auftraggeber bestätigte Adresse `Info@m-rosenbaum.de` ist über `src/contact.js` zentral hinterlegt. Kontaktbereich, Footer, Impressum und Datenschutzerklärung verwenden dieselbe Adresse. Die Links öffnen das E-Mail-Programm; es wurde kein Formular oder Versanddienst ergänzt.
 
-Impressum und Datenschutzerklärung sind separate Seiten mit eigenem Titel, normalem Footer-Link und Rückweg zur Startseite. Die Seiten funktionieren ohne Router-Fallback und werden mit Vite als eigene HTML-Einstiege gebaut. `netlify.toml` setzt Build-Befehl und Ausgabeverzeichnis. Die vorhandene Suchmaschinen-Entwurfssperre bleibt auf allen drei Seiten bestehen.
+Impressum und Datenschutzerklärung sind separate Seiten mit eigenem Titel, normalem Footer-Link und Rückweg zur Startseite. Die Seiten funktionieren ohne Router-Fallback und werden mit Vite als eigene HTML-Einstiege gebaut. `netlify.toml` setzt Build-Befehl und Ausgabeverzeichnis. Aktualisierung vom 25. Oktober 2026: Auf Nutzerwunsch ist die Startseite für Suchmaschinen freigegeben. Die Rechtstexte bleiben wegen ihrer offenen Angaben mit `noindex, follow` von den Suchergebnissen ausgeschlossen.
 
 ## Verwendete Angaben
 

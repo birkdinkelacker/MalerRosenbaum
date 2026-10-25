@@ -1,3 +1,22 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# The custom domain is the canonical public website.
+[[redirects]]
+  from = "https://www.m-rosenbaum.de/*"
+  to = "https://m-rosenbaum.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://deluxe-faun-bca022.netlify.app/*"
+  to = "https://m-rosenbaum.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
