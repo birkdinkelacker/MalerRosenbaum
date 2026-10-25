@@ -16,6 +16,18 @@ Stand: 25. Oktober 2026. Öffentliche Hauptadresse: **https://m-rosenbaum.de/**.
 
 `npm run build` erstellt und prüft diese Dateien automatisch. `npm run check:seo` prüft einen vorhandenen Build erneut.
 
+## Ergebnis der Liveprüfung am 25. Oktober 2026
+
+Die neue Version wurde über GitHub auf Netlify veröffentlicht und unter der Hauptdomain geprüft:
+
+- Startseite, robots.txt, Sitemap, Favicon und Logo liefern HTTP 200 mit passenden Inhaltstypen; kein sperrender `X-Robots-Tag` wurde zurückgegeben.
+- Die Startseite enthält bereits im HTTP-Antworttext Inhalt, kanonische URL, Indexierungsfreigabe und strukturierte Daten.
+- www-Adresse, Netlify-Standarddomain und `/index.html` liefern HTTP 301 zur gewünschten Hauptadresse.
+- Googles [Live-Test für Rich-Suchergebnisse](https://search.google.com/test/rich-results/result?id=sN6OPt7Nkkg_8X4ciFmoDA) konnte die Website erfolgreich crawlen und meldete **zwei gültige Elemente** (lokales Unternehmen und Organisation), ohne kritische Fehler. Der einzige nicht kritische Hinweis betrifft das optionale Feld `priceRange`; mangels bestätigter Preisangaben bleibt es bewusst leer.
+- Der Build wurde sowohl für Produktion als auch für Netlify-Preview-Kontexte geprüft. Die React-Menüinteraktion funktioniert nach dem Laden des vorgerenderten HTML; im Browser traten dabei keine Fehler auf.
+
+Ein erfolgreicher Live-Test ist keine Bestätigung einer bereits erfolgten Google-Indexierung. Das Google-Konto, eine Property-Bestätigung und die Sitemap-Einreichung wurden mangels angemeldetem Zugang bzw. Bestätigungscode nicht eingerichtet oder als erledigt behauptet.
+
 ## Einrichtung im Google-Konto
 
 Im für die Bearbeitung verfügbaren Browser war kein Google-Konto angemeldet. Eine bestehende Search-Console-Bestätigung konnte daher nicht geprüft werden. Ohne einen echten Google-Bestätigungscode wird kein erfundener Verifizierungs-Tag ausgegeben.
