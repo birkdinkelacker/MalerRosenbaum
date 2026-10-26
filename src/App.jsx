@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import './App.css'
 import { contact, emailHref } from './contact'
 import LegalPage from './LegalPage'
-import PaintPreview from './PaintPreview'
+import ScrollPaint from './ScrollPaint'
 
 const logoImage = `${import.meta.env.BASE_URL}rosenbaum-logo.png`
 const symbolImage = `${import.meta.env.BASE_URL}rosenbaum-symbol.png`
@@ -85,11 +85,9 @@ export default function App({ page = 'home' }) {
       </section>
 
       <section className="services-section container section" id="leistungen" aria-labelledby="services-title">
-        <div className="section-heading"><div><div className="eyebrow">WAS WIR MACHEN</div><h2 id="services-title">Unsere Leistungen</h2></div><p>Innenräume, Fassaden und Böden.</p></div>
+        <ScrollPaint><div><div className="eyebrow">WAS WIR MACHEN</div><h2 id="services-title">Unsere Leistungen</h2></div><p>Innenräume, Fassaden und Böden.</p></ScrollPaint>
         <div className="services">{services.map(({ icon, title, text, color }) => <article className={`service accent-${color}`} key={title}><div className="service-icon"><Icon name={icon} size={29} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
-
-      <PaintPreview />
 
       <section className="family-section container section" id="ueber-uns" aria-labelledby="about-title">
         <div className="family-intro"><div className="eyebrow">ÜBER UNS</div><h2 id="about-title">Unser <span>Familienbetrieb</span></h2><ColorLine /></div>

@@ -50,14 +50,14 @@ Sitemap, robots.txt, kanonische URLs, strukturiertes Unternehmen und Logo sowie 
 
 ## Gestaltung und Bilddateien
 
-Die interaktive Farbstudie unter `#farbprobe` bietet vier illustrative Wandfarben, eine per Klick gestartete Farbwalze, einen Vorher-Nachher-Regler und eine E-Mail-Anfrage mit dem gewählten Farbton. Maus, Touch und Tastatur werden über native Bedienelemente unterstützt. Bei reduzierter Bewegung wird die Wand sofort eingefärbt; es gibt keinen automatischen Animationsstart, keine zusätzlichen Dienste und keine Speicherung der Auswahl.
+Beim normalen Scrollen streicht eine dekorative Farbwalze einen hellgrünen Hintergrund hinter „Unsere Leistungen“. Der Anstrich folgt der Scrollposition ohne Klick, Regler oder Eingriff in das Scrollverhalten. Ein passiver Scroll-Listener bündelt Änderungen über requestAnimationFrame; es gibt keine Dauerschleife. Bei reduzierter Bewegung sowie ohne JavaScript bleibt der fertige Farbstreifen statisch sichtbar. Die bisherigen interaktiven Farbwahl-Bedienelemente wurden entfernt. Der Anker `#farbprobe` führt weiterhin zum Walzeneffekt.
 
 - `src/App.jsx`: Inhalte, Leistungen, Navigation, Bildplatzhalter, Kontakt.
 - `src/contact.js`: gemeinsame Kontaktdaten für Startseite, Footer und Rechtstexte.
 - `src/LegalPage.jsx`: Impressum und Datenschutzerklärung mit sichtbaren Platzhaltern.
 - `impressum.html`, `datenschutz.html`: direkt verlinkbare Einstiegsseiten mit eigenen Seitentiteln.
 - `src/App.css`: responsive Gestaltung.
-- `src/PaintPreview.jsx`, `src/PaintPreview.css`: interaktive Farbstudie mit eigener Raumillustration.
+- `src/ScrollPaint.jsx`, `src/ScrollPaint.css`: scrollabhängiger Walzeneffekt im Leistungskopf.
 - `src/index.css`: globale Stile und Farbvariablen.
 - `scripts/prepare-search.mjs`: statische HTML-Ausgabe, strukturierte Daten und optionaler Google-Bestätigungstag.
 - `scripts/check-seo.mjs`: Build-Prüfung für Indexierbarkeit, Sitemap, kanonische URLs, Inhalt und Favicon.

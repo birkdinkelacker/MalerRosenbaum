@@ -1,0 +1,19 @@
+.scroll-paint { --paint-progress: 1; --roller-opacity: 0; position: relative; isolation: isolate; margin-bottom: 34px; }
+.scroll-paint-decoration { position: absolute; inset: 0 -12px; overflow: hidden; pointer-events: none; border-radius: 3px; }
+.scroll-paint-coat { position: absolute; inset: 5px 0 32%; transform: scaleX(var(--paint-progress)); transform-origin: left; background: repeating-linear-gradient(0deg, #ffffff12 0 1px, transparent 1px 4px), linear-gradient(90deg, #e1e8d7, #edf1e6); border-radius: 3px 6px 5px 2px; }
+.scroll-paint-roller { position: absolute; top: 0; left: calc(var(--paint-progress) * 100%); width: 100px; height: 100%; transform: translateX(-65px); opacity: var(--roller-opacity); }
+.scroll-paint-content { position: relative; padding: 27px 28px 67px; margin-bottom: 0; min-height: 190px; }
+.scroll-paint-content > div { position: relative; }
+.scroll-paint-content > p { max-width: 255px; text-align: right; }
+@media (max-width: 650px) {
+  .scroll-paint { margin-bottom: 20px; }
+  .scroll-paint-decoration { inset-inline: -6px; }
+  .scroll-paint-content { padding: 24px 18px 70px; gap: 12px; min-height: 245px; }
+  .scroll-paint-content > p { text-align: left; font-size: 13px; }
+  .scroll-paint-coat { bottom: 32%; }
+  .scroll-paint-roller { width: 84px; transform: translateX(-54.6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-paint-coat { transform: scaleX(1); }
+  .scroll-paint-roller { display: none; }
+}
