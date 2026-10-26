@@ -58,6 +58,7 @@ Beim normalen Scrollen streicht eine dekorative Farbwalze einen hellgrünen Hint
 - `impressum.html`, `datenschutz.html`: direkt verlinkbare Einstiegsseiten mit eigenen Seitentiteln.
 - `src/App.css`: responsive Gestaltung.
 - `src/ScrollPaint.jsx`, `src/ScrollPaint.css`: scrollabhängiger Walzeneffekt im Leistungskopf.
+- `public/roller-stroke.svg`: Farbstreifen mit ausgefransten Kanten, feiner Körnung und ungleichmäßigem Farbauftrag. Die Fläche wird ohne Verzerrung der Struktur aufgedeckt und vertikal an der Mitte der Überschrift ausgerichtet.
 - `src/index.css`: globale Stile und Farbvariablen.
 - `scripts/prepare-search.mjs`: statische HTML-Ausgabe, strukturierte Daten und optionaler Google-Bestätigungstag.
 - `scripts/check-seo.mjs`: Build-Prüfung für Indexierbarkeit, Sitemap, kanonische URLs, Inhalt und Favicon.

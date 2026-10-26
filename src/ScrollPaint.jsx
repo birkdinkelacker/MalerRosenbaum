@@ -13,6 +13,12 @@ export default function ScrollPaint({ children }) {
       frame = null
       const viewport = window.innerHeight
       const top = element.getBoundingClientRect().top
+      const heading = element.querySelector('h2').getBoundingClientRect()
+      // Center the actual paint (inside the SVG's rough edge) on the title,
+      // including when the title wraps or font sizes change on small screens.
+      const coatHeight = Math.max(96, heading.height + 56)
+      element.style.setProperty('--coat-height', `${coatHeight}px`)
+      element.style.setProperty('--coat-top', `${heading.top - top + (heading.height - coatHeight) / 2}px`)
       // One pass follows the section from the bottom into the middle of the screen.
       const progress = preference.matches ? 1 : Math.max(0, Math.min(1, (viewport * .85 - top) / (viewport * .5)))
       element.style.setProperty('--paint-progress', progress)
@@ -37,7 +43,7 @@ export default function ScrollPaint({ children }) {
 
   return <div className="scroll-paint" ref={surface} id="farbprobe">
     <div className="scroll-paint-decoration" aria-hidden="true">
-      <div className="scroll-paint-coat" />
+      <div className="scroll-paint-coat"><img src={`${import.meta.env.BASE_URL}roller-stroke.svg`} alt="" width="1200" height="160" /></div>
       <svg className="scroll-paint-roller" viewBox="0 0 100 190" preserveAspectRatio="none" fill="none">
         <path d="M66 126v15H24v22" stroke="#525b4d" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M66 126v15H24v22" stroke="#c8cec3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
