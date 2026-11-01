@@ -1,9 +1,5 @@
 import { contact, emailHref } from './contact'
 
-function Placeholder({ children }) {
-  return <div className="legal-placeholder" data-nosnippet=""><strong>Noch zu ergänzende Angabe</strong><p>{children}</p></div>
-}
-
 function ContactDetails() {
   return <address className="legal-address">{contact.legalName}<br />Inhaber: {contact.owner}<br />{contact.street}<br />{contact.city}<br />Deutschland<br /><br />Telefon: <a href={contact.phoneHref}>{contact.phone}</a><br />E-Mail: <a href={emailHref}>{contact.email}</a></address>
 }
@@ -13,10 +9,6 @@ function Imprint() {
     <section aria-labelledby="anbieter"><h2 id="anbieter">Angaben gemäß § 5 DDG</h2><ContactDetails /></section>
     <section aria-labelledby="identifikation"><h2 id="identifikation">Wirtschafts-Identifikationsnummer</h2>
       <p>Wirtschafts-Identifikationsnummer gemäß § 139c AO: <strong>{contact.businessId}</strong></p>
-    </section>
-    <section aria-labelledby="weitere-angaben"><h2 id="weitere-angaben">Weitere Unternehmensangaben</h2>
-      <Placeholder>Eine gegebenenfalls zusätzlich vorhandene Umsatzsteuer-Identifikationsnummer und etwaige Registerangaben sind noch zu bestätigen. Angaben zur zuständigen Handwerkskammer sowie gegebenenfalls erforderliche berufsrechtliche Angaben sind noch zu ergänzen.</Placeholder>
-      <Placeholder>Eine gegebenenfalls erforderliche Erklärung zur Teilnahme an Verbraucherstreitbeilegungsverfahren nach § 36 VSBG ist noch anhand der betrieblichen Verhältnisse zu ergänzen.</Placeholder>
     </section>
   </>
 }
@@ -34,7 +26,6 @@ function Privacy() {
       <p>Beim Aufruf werden insbesondere die IP-Adresse, Datum und Uhrzeit, die angeforderte Seite oder Datei sowie technische Angaben zu Browser und Verbindung verarbeitet. Zur Fehlerbehebung und zur Abwehr von Missbrauch können technische Zugriffs- und Fehlerprotokolle anfallen. Diese Verarbeitung ist auch ohne Tracking erforderlich, um die Website sicher und zuverlässig bereitzustellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse besteht im funktionsfähigen und sicheren Betrieb der Website.</p>
       <p>Netlify verarbeitet Hostingdaten als technischer Dienstleister. Netlify stellt dafür einen Vertrag zur Auftragsverarbeitung (Data Processing Agreement, DPA) bereit, der nach Angaben des Anbieters in seine Vertragsbedingungen einbezogen ist. Informationen hierzu finden Sie unter <a href="https://www.netlify.com/gdpr-ccpa/" target="_blank" rel="noreferrer">Netlify – Datenschutz und Auftragsverarbeitung</a>.</p>
       <p>Technische Daten werden für die Auslieferung der Inhalte sowie, soweit erforderlich, zur Untersuchung von Störungen oder Sicherheitsvorfällen verarbeitet. Für Protokolle gelten die Speicher- und Löschregeln des Hostingdienstes. Es erfolgt keine Auswertung des Besucherverhaltens durch uns zu Analyse- oder Werbezwecken.</p>
-      <Placeholder>Die für dieses Netlify-Projekt geltende konkrete Speicherfrist der technischen Zugriffs- und Sicherheitsprotokolle ist noch zu bestätigen.</Placeholder>
     </section>
     <section aria-labelledby="kontakt-datenschutz"><h2 id="kontakt-datenschutz">4. Kontaktaufnahme per E-Mail oder Telefon</h2>
       <p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben, insbesondere Name, Kontaktdaten und Inhalt der Anfrage. Bei E-Mails gehören hierzu auch Betreff, Anhänge sowie Versand- und Empfangsdaten. Die Verarbeitung dient dazu, Ihr Anliegen zu bearbeiten und gegebenenfalls ein Angebot oder einen Auftrag vorzubereiten.</p>

@@ -20,7 +20,9 @@ Der Abruf der öffentlichen Startseite am 1. November 2026 enthielt nur das eige
 
 Auch ohne Tracking verarbeitet Netlify technische Verbindungsdaten. Die Datenschutzerklärung unterscheidet diese von einer Verhaltensanalyse. GMX wird als E-Mail- und Domainanbieter benannt, nicht als Websitehost.
 
-## Noch offen und auf der Website markiert
+## Noch offen (nur intern dokumentiert)
+
+Auf ausdrücklichen Nutzerwunsch wurden die gelben Hinweiskästen aus beiden Rechtstexten entfernt. Die folgenden Sachfragen sind dadurch nicht geklärt; es wurden keine Ersatzangaben erfunden.
 
 1. Etwaige zusätzliche USt-ID/Registerangaben sowie zutreffende Kammer-/Berufsangaben.
 2. Gegebenenfalls erforderliche Erklärung nach § 36 VSBG. Keine Teilnahmebereitschaft oder -pflicht erfunden. Die Beschäftigtenzahl am 31. Dezember des Vorjahres ist nicht bekannt.

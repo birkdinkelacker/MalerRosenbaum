@@ -41,7 +41,7 @@ for (const file of ['impressum.html', 'datenschutz.html']) {
   assert.match(html, /<h1>/)
   assert.match(html, /Mario Rosenbaum/)
   assert.match(html, /Itterstraße 5 A/)
-  assert.match(html, /Noch zu ergänzende Angabe/)
+  assert.doesNotMatch(html, /legal-placeholder|Noch zu ergänzende Angabe/)
   assert.doesNotMatch(html, /Übergabefassung|Hinweis für den Webdesigner|Website war beim aktuellen Abruf/)
   assert.match(home, new RegExp(`href="/${file.replace('.', '\\.')}"`))
 }

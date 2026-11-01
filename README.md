@@ -40,7 +40,7 @@ Die frühere Bildvorlage enthält Muster-Kontaktdaten, die nicht übernommen wur
 
 - Drei echte Baustellenbilder in den markierten Bereichen; Beschreibungen an die jeweiligen Bilder anpassen.
 - Öffnungszeiten eintragen.
-- Die sichtbar markierten Platzhalter in Impressum und Datenschutzerklärung vervollständigen bzw. nicht zutreffende Angaben entfernen. Eine Übersicht und die geprüften Quellen stehen in `docs/legal-content.md`.
+- Die gelben Hinweiskästen in den Rechtstexten wurden auf Nutzerwunsch entfernt. Weiterhin offene Sachfragen und die geprüften Quellen stehen intern in `docs/legal-content.md`.
 - Offen bleiben insbesondere gegebenenfalls erforderliche Register-/Berufsangaben und Streitbeilegungshinweise sowie die konkrete Netlify-Logspeicherfrist. Anbieter-Verträge und betriebliche Löschpraxis sind abzugleichen. Details stehen in `docs/legal-content.md`.
 - Die Startseite ist auf Nutzerwunsch seit 25. Oktober 2026 für Suchmaschinen freigegeben. Die unvollständigen Rechtstexte bleiben `noindex, follow`; das ist kein Zugriffsschutz.
 
