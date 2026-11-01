@@ -34,14 +34,14 @@ Die vom Auftraggeber am 9. Oktober 2026 bereitgestellte Gestaltungsvorlage bilde
 
 Die Leistungen sind jetzt aus der Vorlage übernommen und keine erfundenen Vorschläge mehr. Preise, Bewertungen und nicht übermittelte Qualifikationen werden nicht ergänzt.
 
-Die Vorlage enthält offensichtliche Muster-Kontaktdaten (Musterstraße 1, 06271 123456). Die Website behält deshalb die zuvor übermittelten Angaben: Itterstraße 5, 69412 Eberbach und 01514 4341412. Am 24. Oktober 2026 hat der Auftraggeber `Info@m-rosenbaum.de`, Netlify als Host und GMX für E-Mail und Domain bestätigt. Die E-Mail-Adresse ist im Kontaktbereich, im Footer und in beiden Rechtstexten als `mailto:`-Link eingebunden. Der vollständige rechtliche Inhabername bleibt offen; der Name aus der Gestaltungsvorlage wird nicht als bestätigt übernommen.
+Die frühere Bildvorlage enthält Muster-Kontaktdaten, die nicht übernommen wurden. Die neue Rechtstextvorlage vom 1. November 2026 nennt MR Rosenbaum, Inhaber Mario Rosenbaum, Itterstraße 5 A, 69412 Eberbach, Telefon 0151 44341412, `info@m-rosenbaum.de` und Wirtschafts-ID DE412625733. Diese Angaben sind zentral hinterlegt; die sichtbare Marke bleibt „Maler Rosenbaum“. Netlify als Host und GMX für E-Mail und Domain sind vom Nutzer bestätigt, ebenso der Betrieb ohne Tracking und Kontaktformular.
 
 ## Noch ergänzen
 
 - Drei echte Baustellenbilder in den markierten Bereichen; Beschreibungen an die jeweiligen Bilder anpassen.
 - Öffnungszeiten eintragen.
 - Die sichtbar markierten Platzhalter in Impressum und Datenschutzerklärung vervollständigen bzw. nicht zutreffende Angaben entfernen. Eine Übersicht und die geprüften Quellen stehen in `docs/legal-content.md`.
-- Insbesondere rechtliche Inhaberangaben, Register-/Berufsangaben, Anbieter-Verträge, Hosting-Einstellungen und Löschfristen bestätigen. Die Rechtstexte sind Entwürfe und keine bestätigte rechtliche Freigabe.
+- Offen bleiben insbesondere gegebenenfalls erforderliche Register-/Berufsangaben und Streitbeilegungshinweise sowie die konkrete Netlify-Logspeicherfrist. Anbieter-Verträge und betriebliche Löschpraxis sind abzugleichen. Details stehen in `docs/legal-content.md`.
 - Die Startseite ist auf Nutzerwunsch seit 25. Oktober 2026 für Suchmaschinen freigegeben. Die unvollständigen Rechtstexte bleiben `noindex, follow`; das ist kein Zugriffsschutz.
 
 ## Google Search Console

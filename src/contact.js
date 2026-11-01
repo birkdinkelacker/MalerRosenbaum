@@ -1,9 +1,12 @@
 export const contact = {
   name: 'Maler Rosenbaum',
-  email: 'Info@m-rosenbaum.de',
-  phone: '01514 4341412',
+  legalName: 'MR Rosenbaum',
+  owner: 'Mario Rosenbaum',
+  businessId: 'DE412625733',
+  email: 'info@m-rosenbaum.de',
+  phone: '0151 44341412',
   phoneHref: 'tel:+4915144341412',
-  street: 'Itterstraße 5',
+  street: 'Itterstraße 5 A',
   city: '69412 Eberbach',
 }
 
