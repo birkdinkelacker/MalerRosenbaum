@@ -61,7 +61,7 @@ const vite = await createServer({
 })
 try {
   const { default: App } = await vite.ssrLoadModule('/src/App.jsx')
-  for (const [file, page] of [['index.html', 'home'], ['impressum.html', 'impressum'], ['datenschutz.html', 'datenschutz']]) {
+  for (const [file, page] of [['index.html', 'home'], ['impressum.html', 'impressum'], ['datenschutz.html', 'datenschutz'], ['spritztechnik.html', 'spritztechnik']]) {
     const path = new URL(`../dist/${file}`, import.meta.url)
     let html = await readFile(path, 'utf8')
     if (!html.includes('<div id="root"></div>')) throw new Error(`Missing empty root in ${file}; run a fresh Vite build.`)

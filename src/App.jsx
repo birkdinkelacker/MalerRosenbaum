@@ -3,6 +3,7 @@ import './App.css'
 import { contact, emailHref } from './contact'
 import LegalPage from './LegalPage'
 import ScrollPaint from './ScrollPaint'
+import SprayPage from './SprayPage'
 
 const logoImage = `${import.meta.env.BASE_URL}rosenbaum-logo.png`
 const symbolImage = `${import.meta.env.BASE_URL}rosenbaum-symbol.png`
@@ -13,6 +14,7 @@ function Icon({ name = 'arrow', size = 22 }) {
     phone: 'M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a15 15 0 0 1-7-7l2-2-2-5Z',
     mail: 'M3 5h18v14H3zM3 5l9 7 9-7',
     roller: 'M3 3h14v7H3zM17 6h4v8H11v7M9 17h4v5H9z',
+    spray: 'M3 9h9v5H3zM12 10h3v3h-3M6 14l-2 7h4l2-7M5 9V4h5v5M4 4h7M9 15h3v3H9M18 8l3-2M18 11h4M18 14l3 2',
     room: 'm3 6 9-4 9 4v12l-9 4-9-4V6Zm9-4v12m-9 4 9-4 9 4',
     home: 'm3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7',
     layers: 'm12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5',
@@ -43,6 +45,7 @@ const services = [
   { icon: 'home', title: 'Fassade', text: 'Fassadengestaltung und Schutzanstriche für den Werterhalt Ihres Gebäudes.', color: 'blue' },
   { icon: 'layers', title: 'Bodenbeläge', text: 'Vinyl, Designböden, Parkett und Laminat – die passende Grundlage für Ihr Zuhause.', color: 'red' },
   { icon: 'wallpaper', title: 'Tapeten', text: 'Moderne Tapeten, individuelle Designs und professionelle Verarbeitung.', color: 'yellow' },
+  { icon: 'spray', title: 'Spritztechnik für Unternehmen', text: 'Maschineller Auftrag gebrauchsfertiger Spritzspachtelmassen auf Innenwänden und Decken – effizient, flexibel und direkt auf Ihrer Baustelle.', color: 'blue', href: `${import.meta.env.BASE_URL}spritztechnik.html` },
 ]
 
 export default function App({ page = 'home' }) {
@@ -72,7 +75,7 @@ export default function App({ page = 'home' }) {
       </div>
     </header>
 
-    {page !== 'home' ? <LegalPage page={page} /> : <main id="inhalt">
+    {page === 'spritztechnik' ? <SprayPage /> : page !== 'home' ? <LegalPage page={page} /> : <main id="inhalt">
       <section className="hero container" id="start" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-dash" /> ROSENBAUM · FAMILIENBETRIEB</div>
@@ -86,7 +89,7 @@ export default function App({ page = 'home' }) {
 
       <section className="services-section container section" id="leistungen" aria-labelledby="services-title">
         <ScrollPaint><div><h2 id="services-title">Unsere Leistungen</h2></div><p>Innenräume, Fassaden und Böden.</p></ScrollPaint>
-        <div className="services">{services.map(({ icon, title, text, color }) => <article className={`service accent-${color}`} key={title}><div className="service-icon"><Icon name={icon} size={29} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div className="services">{services.map(({ icon, title, text, color, href }) => <article className={`service accent-${color}`} key={title}><div className="service-icon"><Icon name={icon} size={29} /></div><h3>{title}</h3><p>{text}</p>{href && <a className="text-link service-more" href={href}>Mehr erfahren <Icon size={18} /></a>}</article>)}</div>
       </section>
 
       <section className="family-section container section" id="ueber-uns" aria-labelledby="about-title">

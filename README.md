@@ -1,5 +1,7 @@
 # Maler Rosenbaum
 
+**Dieser Branch enthält den unveröffentlichten Spritztechnik-Entwurf.** Laut Arbeitsauftrag darf er erst nach Klärung der handwerksrechtlichen Einordnung veröffentlicht werden. Details und Vorschau: `docs/spritztechnik-entwurf.md`. Kein Push/Deployment dieses Entwurfs ohne diese Freigabe.
+
 Responsive Website für den Familienbetrieb Maler Rosenbaum in Eberbach. Weißer Hintergrund, Blattgrün (#365823), dezente Goldakzente (#b28a49) und die roten, gelben und blauen Farben der neuen Bildmarke.
 
 ## Lokal starten

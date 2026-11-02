@@ -9,5 +9,6 @@ export default defineConfig({
     home: resolve(import.meta.dirname, 'index.html'),
     impressum: resolve(import.meta.dirname, 'impressum.html'),
     datenschutz: resolve(import.meta.dirname, 'datenschutz.html'),
+    spritztechnik: resolve(import.meta.dirname, 'spritztechnik.html'),
   },
 })

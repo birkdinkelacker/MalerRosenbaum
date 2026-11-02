@@ -48,6 +48,16 @@ for (const file of ['impressum.html', 'datenschutz.html']) {
 assert.match(await read('impressum.html'), /DE412625733/)
 assert.match(await read('datenschutz.html'), /kein Tracking, keine Analyse- oder Werbedienste und kein Kontaktformular/)
 
+const spray = await read('spritztechnik.html')
+assert.match(home, /href="\/spritztechnik.html"/)
+assert.equal((home.match(/class="service accent-/g) || []).length, 6)
+assert.match(spray, /name="robots" content="noindex, nofollow"/)
+assert.match(spray, /Spritztechnik<br\s*\/?><span>für Unternehmen/)
+assert.match(spray, /Das anschließende Abziehen, Glätten und die weitere Oberflächenbearbeitung übernimmt Ihr Betrieb/)
+assert.match(spray, /mailto:info@m-rosenbaum.de\?subject=Einsatzanfrage%20Spritztechnik/)
+assert.match(spray, /FOTO-PLATZHALTER/)
+assert.match(spray, /href="\/#leistungen"/)
+
 const favicon = await readFile(new URL('favicon.png', output))
 assert.equal(favicon.subarray(1, 4).toString(), 'PNG')
 assert.equal(favicon.readUInt32BE(16), 96)

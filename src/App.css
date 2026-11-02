@@ -41,7 +41,7 @@ h3 { font-size: 18px; font-weight: 700; line-height: 1.35; letter-spacing: -.3px
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 25px; margin-bottom: 34px; }
 .section-heading > p { color: var(--muted); font-size: 14px; }
 .services-section { border-top: 1px solid var(--border); }
-.services { display: grid; grid-template-columns: repeat(5, 1fr); gap: 23px; }
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 23px; }
 .accent-red { --accent: var(--red); }
 .accent-yellow { --accent: var(--yellow); }
 .accent-blue { --accent: var(--blue); }
