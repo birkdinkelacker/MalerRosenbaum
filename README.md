@@ -1,6 +1,6 @@
 # Maler Rosenbaum
 
-**Dieser Branch enthält den unveröffentlichten Spritztechnik-Entwurf.** Laut Arbeitsauftrag darf er erst nach Klärung der handwerksrechtlichen Einordnung veröffentlicht werden. Details und Vorschau: `docs/spritztechnik-entwurf.md`. Kein Push/Deployment dieses Entwurfs ohne diese Freigabe.
+Die Veröffentlichung der Spritztechnik-Unterseite wurde am 4. November 2026 vom Auftraggeber beauftragt. Details: `docs/spritztechnik-entwurf.md`.
 
 Responsive Website für den Familienbetrieb Maler Rosenbaum in Eberbach. Weißer Hintergrund, Blattgrün (#365823), dezente Goldakzente (#b28a49) und die roten, gelben und blauen Farben der neuen Bildmarke.
 
@@ -29,9 +29,9 @@ Für Netlify legt `netlify.toml` den Build-Befehl `npm run build` und das Veröf
 Die vom Auftraggeber am 9. Oktober 2026 bereitgestellte Gestaltungsvorlage bildet die Grundlage für die Farbwelt, den Rosenbaum, den Familienbetrieb und diese fünf Leistungen:
 
 - Wand & Decke: Raumgestaltung, Spachteltechniken, kreative Oberflächen.
-- Farbe & Oberflächen: Anstriche, Lackierarbeiten, dekorative Gestaltung innen und außen.
-- Fassade: Fassadengestaltung, Schutzanstriche, Werterhalt.
-- Bodenbeläge: Vinyl, Designböden, Parkett, Laminat.
+- Farbe & Oberflächen: Anstriche, dekorative Gestaltung innen und außen.
+- Fassade: Fassadengestaltung.
+- Bodenbeläge: Vinyl, Designböden, Teppichboden, Laminat.
 - Tapeten: individuelle Designs und professionelle Verarbeitung.
 
 Die Leistungen sind jetzt aus der Vorlage übernommen und keine erfundenen Vorschläge mehr. Preise, Bewertungen und nicht übermittelte Qualifikationen werden nicht ergänzt.

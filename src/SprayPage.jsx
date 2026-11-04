@@ -49,6 +49,5 @@ export default function SprayPage() {
       <p>Sprechen Sie uns an. Wir stimmen den Einsatz individuell mit Ihnen ab und erstellen Ihnen gerne ein Angebot.</p>
       <div className="spray-contact-actions"><a className="button" href={`${emailHref}?subject=${encodeURIComponent('Einsatzanfrage Spritztechnik')}`}>Jetzt Einsatz anfragen <span aria-hidden="true">→</span></a><a className="text-link" href={contact.phoneHref}>{contact.phone}</a></div>
     </section>
-    <p className="spray-draft" data-nosnippet="">Entwurf zur Abstimmung · Veröffentlichung nach Klärung der handwerksrechtlichen Einordnung des Maschinenservices.</p>
   </main>
 }

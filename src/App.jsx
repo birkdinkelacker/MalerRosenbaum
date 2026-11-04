@@ -41,9 +41,9 @@ function PhotoPlaceholder({ title, description = 'Hier folgt ein echtes Baustell
 
 const services = [
   { icon: 'room', title: 'Wand & Decke', text: 'Raumgestaltung, Spachteltechniken und kreative Oberflächen – individuell für Ihre Räume.', color: 'red' },
-  { icon: 'roller', title: 'Farbe & Oberflächen', text: 'Anstriche, Lackierarbeiten und dekorative Gestaltung für Innenräume und Außenbereiche.', color: 'yellow' },
-  { icon: 'home', title: 'Fassade', text: 'Fassadengestaltung und Schutzanstriche für den Werterhalt Ihres Gebäudes.', color: 'blue' },
-  { icon: 'layers', title: 'Bodenbeläge', text: 'Vinyl, Designböden, Parkett und Laminat – die passende Grundlage für Ihr Zuhause.', color: 'red' },
+  { icon: 'roller', title: 'Farbe & Oberflächen', text: 'Anstriche und dekorative Gestaltung für Innenräume und Außenbereiche.', color: 'yellow' },
+  { icon: 'home', title: 'Fassade', text: 'Fassadengestaltung.', color: 'blue' },
+  { icon: 'layers', title: 'Bodenbeläge', text: 'Vinyl, Designböden, Teppichboden und Laminat – die passende Grundlage für Ihr Zuhause.', color: 'red' },
   { icon: 'wallpaper', title: 'Tapeten', text: 'Moderne Tapeten, individuelle Designs und professionelle Verarbeitung.', color: 'yellow' },
   { icon: 'spray', title: 'Spritztechnik für Unternehmen', text: 'Maschineller Auftrag gebrauchsfertiger Spritzspachtelmassen auf Innenwänden und Decken – effizient, flexibel und direkt auf Ihrer Baustelle.', color: 'blue', href: `${import.meta.env.BASE_URL}spritztechnik.html` },
 ]
@@ -88,13 +88,13 @@ export default function App({ page = 'home' }) {
       </section>
 
       <section className="services-section container section" id="leistungen" aria-labelledby="services-title">
-        <ScrollPaint><div><h2 id="services-title">Unsere Leistungen</h2></div><p>Innenräume, Fassaden und Böden.</p></ScrollPaint>
+        <ScrollPaint><div><h2 id="services-title">Unsere Leistungen</h2></div></ScrollPaint>
         <div className="services">{services.map(({ icon, title, text, color, href }) => <article className={`service accent-${color}`} key={title}><div className="service-icon"><Icon name={icon} size={29} /></div><h3>{title}</h3><p>{text}</p>{href && <a className="text-link service-more" href={href}>Mehr erfahren <Icon size={18} /></a>}</article>)}</div>
       </section>
 
       <section className="family-section container section" id="ueber-uns" aria-labelledby="about-title">
         <div className="family-intro"><div className="eyebrow">ÜBER UNS</div><h2 id="about-title">Unser <span>Familienbetrieb</span></h2><ColorLine /></div>
-        <div className="family-copy"><p>Wir sind Maler Rosenbaum aus Eberbach. Als Familienbetrieb nehmen wir Ihr Zuhause persönlich – mit einem offenen Ohr für Ihre Wünsche und Freude an guter Arbeit.</p><ul className="family-values"><li><Icon name="check" size={18} /> Persönliche Beratung</li><li><Icon name="check" size={18} /> Saubere, zuverlässige Ausführung</li><li><Icon name="check" size={18} /> Hochwertige Materialien</li></ul><a className="text-link" href="#kontakt">Lernen wir uns kennen <Icon size={18} /></a></div>
+        <div className="family-copy"><p>Wir sind ein Familienbetrieb aus Eberbach. Wir nehmen Ihr Zuhause persönlich – mit einem offenen Ohr für Ihre Wünsche und Freude an guter Arbeit.</p><ul className="family-values"><li><Icon name="check" size={18} /> Persönliche Beratung</li><li><Icon name="check" size={18} /> Saubere, zuverlässige Ausführung</li><li><Icon name="check" size={18} /> Hochwertige Materialien</li></ul><a className="text-link" href="#kontakt">Lernen wir uns kennen <Icon size={18} /></a></div>
       </section>
 
       <section className="container section projects-section" id="einblicke" aria-labelledby="projects-title">
@@ -104,12 +104,12 @@ export default function App({ page = 'home' }) {
 
       <section className="contact container section" id="kontakt" aria-labelledby="contact-title">
         <div className="contact-copy"><div className="eyebrow">SO ERREICHEN SIE UNS</div><h2 id="contact-title">Kontakt</h2><p>Rufen Sie uns an oder schreiben Sie uns, um Ihr Vorhaben zu besprechen.</p><div className="contact-actions"><a className="button" href={contact.phoneHref}><Icon name="phone" size={19} />{contact.phone}</a><a className="text-link contact-email" href={emailHref}><Icon name="mail" size={21} />{contact.email}</a></div></div>
-        <div className="contact-details"><div><span className="label">MALER ROSENBAUM · FAMILIENBETRIEB</span><address>{contact.street}<br />{contact.city}</address><a className="text-link" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${contact.name} ${contact.street} ${contact.city}`)}`} target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-missing" data-nosnippet=""><span className="placeholder-label">NOCH ZU ERGÄNZEN</span><p>Öffnungszeiten</p></div></div>
+        <div className="contact-details"><div><span className="label">M-ROSENBAUM · FAMILIENBETRIEB</span><address>{contact.street}<br />{contact.city}</address><a className="text-link" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${contact.name} ${contact.street} ${contact.city}`)}`} target="_blank" rel="noreferrer">Route planen <Icon size={17} /></a></div><div className="contact-hours"><h3>Öffnungszeiten</h3><p>Montag–Freitag: 08:00–18:00 Uhr</p><p>Samstag und Sonntag: Nach Vereinbarung</p></div></div>
       </section>
     </main>}
 
     <footer className="footer"><div className="container"><ColorLine className="footer-color-line" /><div className="footer-row"><Brand homePrefix={homePrefix} /><div className="footer-contact"><a href={emailHref}>{contact.email}</a><span>© {new Date().getFullYear()} Maler Rosenbaum</span></div><div className="legal-links"><a href={`${import.meta.env.BASE_URL}impressum.html`} aria-current={page === 'impressum' ? 'page' : undefined}>Impressum</a><a href={`${import.meta.env.BASE_URL}datenschutz.html`} aria-current={page === 'datenschutz' ? 'page' : undefined}>Datenschutz</a></div></div>
-      <p className="draft-note" data-nosnippet="">Website-Entwurf · Baustellenfotos und offene Angaben folgen.</p>
+      <p className="draft-note" data-nosnippet="">Baustellenfotos folgen.</p>
     </div></footer>
   </>
 }

@@ -1,6 +1,6 @@
 export const contact = {
   name: 'Maler Rosenbaum',
-  legalName: 'MR Rosenbaum',
+  legalName: 'M-Rosenbaum',
   owner: 'Mario Rosenbaum',
   businessId: 'DE412625733',
   email: 'info@m-rosenbaum.de',

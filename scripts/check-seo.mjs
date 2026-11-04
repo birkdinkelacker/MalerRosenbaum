@@ -23,7 +23,7 @@ if (preview) {
 }
 
 const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1])
-assert.deepEqual(locations, ['https://m-rosenbaum.de/'])
+assert.deepEqual(locations, ['https://m-rosenbaum.de/', 'https://m-rosenbaum.de/spritztechnik.html'])
 const jsonMatch = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)
 assert.ok(jsonMatch, 'Structured data must be in the delivered HTML.')
 const graph = JSON.parse(jsonMatch[1])['@graph']
@@ -51,7 +51,8 @@ assert.match(await read('datenschutz.html'), /kein Tracking, keine Analyse- oder
 const spray = await read('spritztechnik.html')
 assert.match(home, /href="\/spritztechnik.html"/)
 assert.equal((home.match(/class="service accent-/g) || []).length, 6)
-assert.match(spray, /name="robots" content="noindex, nofollow"/)
+assert.match(spray, preview ? /name="robots" content="noindex, nofollow"/ : /name="robots" content="index, follow, max-image-preview:large"/)
+assert.match(spray, /rel="canonical" href="https:\/\/m-rosenbaum\.de\/spritztechnik.html"/)
 assert.match(spray, /Spritztechnik<br\s*\/?><span>für Unternehmen/)
 assert.match(spray, /Das anschließende Abziehen, Glätten und die weitere Oberflächenbearbeitung übernimmt Ihr Betrieb/)
 assert.match(spray, /mailto:info@m-rosenbaum.de\?subject=Einsatzanfrage%20Spritztechnik/)
@@ -64,3 +65,11 @@ assert.equal(favicon.readUInt32BE(16), 96)
 assert.equal(favicon.readUInt32BE(20), 96)
 for (const file of ['rosenbaum-logo.png', 'favicon.ico', 'apple-touch-icon.png']) await access(new URL(file, output))
 console.log('SEO checks passed: static content, robots, sitemap, canonical, structured data, legal links and favicon.')
+
+assert.equal(business.openingHoursSpecification.opens, '08:00')
+assert.equal(business.openingHoursSpecification.closes, '18:00')
+assert.deepEqual(business.openingHoursSpecification.dayOfWeek, ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'])
+assert.doesNotMatch(home, /Lackierarbeiten|Parkett|Innenräume, Fassaden und Böden\./)
+assert.match(home, /Teppichboden/)
+assert.match(home, /Samstag und Sonntag: Nach Vereinbarung/)
+assert.match(await read('impressum.html'), /M-Rosenbaum/)

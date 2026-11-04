@@ -48,6 +48,12 @@ const structuredData = {
         addressLocality: 'Eberbach',
         addressCountry: 'DE',
       },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
       areaServed: { '@type': 'City', name: 'Eberbach' },
     },
   ],
@@ -70,8 +76,9 @@ try {
       const json = JSON.stringify(structuredData).replace(/</g, '\\u003c')
       html = html.replace('</head>', `    <script type="application/ld+json">${json}</script>\n  </head>`)
       if (verification) html = html.replace('</head>', `    <meta name="google-site-verification" content="${verification}" />\n  </head>`)
-      if (preview) html = html.replace('index, follow, max-image-preview:large', 'noindex, nofollow')
+
     }
+    if (preview) html = html.replace('index, follow, max-image-preview:large', 'noindex, nofollow')
     await writeFile(path, html)
   }
   if (preview) {
